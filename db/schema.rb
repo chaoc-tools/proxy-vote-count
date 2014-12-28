@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228212538) do
+ActiveRecord::Schema.define(version: 20141228215246) do
 
   create_table "buildings", force: true do |t|
     t.string   "name"
@@ -19,5 +19,18 @@ ActiveRecord::Schema.define(version: 20141228212538) do
     t.datetime "updated_at"
     t.string   "campus"
   end
+
+  create_table "users", force: true do |t|
+    t.boolean  "is_shareholder"
+    t.string   "first_name"
+    t.string   "middle_initial"
+    t.string   "last_name"
+    t.string   "nickname"
+    t.integer  "building_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["building_id"], name: "index_users_on_building_id"
 
 end
