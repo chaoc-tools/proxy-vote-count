@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @proxy_vote.year %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @proxy_vote.count %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @proxy_vote.building %>
+</p>
+
+<%= link_to 'Edit', edit_proxy_vote_path(@proxy_vote) %> |
+<%= link_to 'Back', proxy_votes_path %>

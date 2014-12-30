@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :proxy_votes
+
   resources :users
 
   resources :buildings

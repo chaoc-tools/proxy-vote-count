@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228215246) do
+ActiveRecord::Schema.define(version: 20141230222000) do
 
   create_table "buildings", force: true do |t|
     t.string   "name"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20141228215246) do
     t.datetime "updated_at"
     t.string   "campus"
   end
+
+  create_table "proxy_votes", force: true do |t|
+    t.integer  "year"
+    t.integer  "count"
+    t.integer  "building_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "proxy_votes", ["building_id"], name: "index_proxy_votes_on_building_id"
 
   create_table "users", force: true do |t|
     t.boolean  "is_shareholder"
