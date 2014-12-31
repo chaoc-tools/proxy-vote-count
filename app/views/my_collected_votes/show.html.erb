@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Votes collected:</strong>
+  <%= @my_collected_vote.votes_collected %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= Building.find(@my_collected_vote.building_id).name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@my_collected_vote.user_id).nickname %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @my_collected_vote.year %>
+</p>
+
+<%= link_to 'Edit', edit_my_collected_vote_path(@my_collected_vote) %> |
+<%= link_to 'Back', my_collected_votes_path %>

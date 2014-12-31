@@ -1,0 +1,31 @@
+<h1>Listing my_collected_votes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Votes collected</th>
+      <th>Building</th>
+      <th>User</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_collected_votes.each do |my_collected_vote| %>
+      <tr>
+        <td><%= my_collected_vote.votes_collected %></td>
+        <td><%= my_collected_vote.building_id %></td>
+        <td><%= my_collected_vote.user_id %></td>
+        <td><%= my_collected_vote.year %></td>
+        <td><%= link_to 'Show', my_collected_vote %></td>
+        <td><%= link_to 'Edit', edit_my_collected_vote_path(my_collected_vote) %></td>
+        <td><%= link_to 'Destroy', my_collected_vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New My collected vote', new_my_collected_vote_path %>

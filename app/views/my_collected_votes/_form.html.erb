@@ -1,0 +1,33 @@
+<%= form_for(@my_collected_vote) do |f| %>
+  <% if @my_collected_vote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@my_collected_vote.errors.count, "error") %> prohibited this my_collected_vote from being saved:</h2>
+
+      <ul>
+      <% @my_collected_vote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :votes_collected %><br>
+    <%= f.number_field :votes_collected, :placeholder => "None yet..." %>
+  </div>
+  <div class="field">
+    <%= f.label :building_id %><br>
+     <%= f.collection_select :building_id, Building.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label "User" %><br>
+      <%= f.collection_select :user_id, User.all, :id, :nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year, :value => Time.now.year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

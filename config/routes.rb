@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :my_collected_votes
+
   resources :proxy_votes
 
   resources :users

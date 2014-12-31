@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231011013) do
+ActiveRecord::Schema.define(version: 20141231190117) do
 
   create_table "buildings", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "campus"
+  end
+
+  create_table "my_collected_votes", force: true do |t|
+    t.integer  "votes_collected"
+    t.integer  "building_id"
+    t.integer  "user_id"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "proxy_votes", force: true do |t|
