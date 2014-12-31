@@ -12,7 +12,7 @@
 
 <p>
   <strong>Building:</strong>
-  <%= @proxy_vote.building %>
+  <%= Building.find(@proxy_vote.building_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_proxy_vote_path(@proxy_vote) %> |

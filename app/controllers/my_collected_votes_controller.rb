@@ -28,6 +28,12 @@ class MyCollectedVotesController < ApplicationController
 
     respond_to do |format|
       if @my_collected_vote.save
+
+        #set proxy_vote.total_count for this year to += this vote count for this year
+
+        #set proxy_vote.building_count for each building to += this vote count for this year
+        
+
         format.html { redirect_to @my_collected_vote, notice: 'My collected vote was successfully created.' }
         format.json { render :show, status: :created, location: @my_collected_vote }
       else

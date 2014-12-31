@@ -1,4 +1,5 @@
 <h1>Listing proxy_votes</h1>
+Total Count: <%= @total_vote_count %>
 
 <table>
   <thead>
@@ -15,10 +16,10 @@
       <tr>
         <td><%= proxy_vote.year %></td>
         <td><%= proxy_vote.count %></td>
-        <td><%= proxy_vote.building %></td>
-        <td><%= link_to 'Show', proxy_vote %></td>
-        <td><%= link_to 'Edit', edit_proxy_vote_path(proxy_vote) %></td>
-        <td><%= link_to 'Destroy', proxy_vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Building.find(proxy_vote.building_id).name %></td>
+        <td><%#= link_to 'Show', proxy_vote %></td>
+        <td><%#= link_to 'Edit', edit_proxy_vote_path(proxy_vote) %></td>
+        <td><%#= link_to 'Destroy', proxy_vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Proxy vote', new_proxy_vote_path %>
+<%#= link_to 'New Proxy vote', new_proxy_vote_path %>

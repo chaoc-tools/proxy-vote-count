@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'proxy_votes#index'
   resources :my_collected_votes
 
   resources :proxy_votes
