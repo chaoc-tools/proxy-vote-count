@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141231190117) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "buildings", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20141231190117) do
     t.integer  "building_user_count"
   end
 
-  add_index "proxy_votes", ["building_id"], name: "index_proxy_votes_on_building_id"
+  add_index "proxy_votes", ["building_id"], name: "index_proxy_votes_on_building_id", using: :btree
 
   create_table "users", force: true do |t|
     t.boolean  "is_shareholder"
@@ -53,6 +56,6 @@ ActiveRecord::Schema.define(version: 20141231190117) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["building_id"], name: "index_users_on_building_id"
+  add_index "users", ["building_id"], name: "index_users_on_building_id", using: :btree
 
 end
