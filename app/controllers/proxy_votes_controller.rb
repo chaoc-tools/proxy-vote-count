@@ -5,6 +5,7 @@ class ProxyVotesController < ApplicationController
   # GET /proxy_votes.json
   def index
     @total_vote_count = ProxyVote.update_total_vote_count
+    @vote_count_by_building = ProxyVote.vote_count_by_building
     @proxy_votes = ProxyVote.all
   end
 
