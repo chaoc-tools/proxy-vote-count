@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
 
-  root 'proxy_votes#index'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :sessions, only: [:create, :destroy]
+  resource :home, only: [:show]
+
+  root to: "home#show"
+
+  # get 'sessions/create'
+
+  # get 'sessions/destroy'
+
+  # get 'home/show'
+
+  # root 'proxy_votes#index'
   resources :my_collected_votes
 
   resources :proxy_votes

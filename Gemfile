@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 gem 'annotate', '~> 2.6.5', group: :development
 gem "figaro"
 gem 'rails_12factor', group: :production
+gem "omniauth-google-oauth2", "~> 0.2.1"
 ruby "2.1.3"
 
 
