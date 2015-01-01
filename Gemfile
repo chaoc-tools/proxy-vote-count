@@ -28,6 +28,11 @@ gem 'spring',        group: :development
 
 ##ADDED GEMS
 gem 'annotate', '~> 2.6.5', group: :development
+gem "figaro"
+gem 'rails_12factor', group: :production
+ruby "2.1.3"
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
