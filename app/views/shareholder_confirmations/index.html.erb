@@ -1,0 +1,33 @@
+<h1>Listing shareholder_confirmations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sh firstname</th>
+      <th>Sh mi</th>
+      <th>Sh last name</th>
+      <th>Sh bldg</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shareholder_confirmations.each do |shareholder_confirmation| %>
+      <tr>
+        <td><%= shareholder_confirmation.sh_firstname %></td>
+        <td><%= shareholder_confirmation.sh_mi %></td>
+        <td><%= shareholder_confirmation.sh_last_name %></td>
+        <td><%= shareholder_confirmation.sh_bldg %></td>
+        <td><%= shareholder_confirmation.notes %></td>
+        <td><%= link_to 'Show', shareholder_confirmation %></td>
+        <td><%= link_to 'Edit', edit_shareholder_confirmation_path(shareholder_confirmation) %></td>
+        <td><%= link_to 'Destroy', shareholder_confirmation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shareholder confirmation', new_shareholder_confirmation_path %>

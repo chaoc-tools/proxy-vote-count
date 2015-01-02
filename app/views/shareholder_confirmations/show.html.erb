@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sh firstname:</strong>
+  <%= @shareholder_confirmation.sh_firstname %>
+</p>
+
+<p>
+  <strong>Sh mi:</strong>
+  <%= @shareholder_confirmation.sh_mi %>
+</p>
+
+<p>
+  <strong>Sh last name:</strong>
+  <%= @shareholder_confirmation.sh_last_name %>
+</p>
+
+<p>
+  <strong>Sh bldg:</strong>
+  <%= @shareholder_confirmation.sh_bldg %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @shareholder_confirmation.notes %>
+</p>
+
+<%= link_to 'Edit', edit_shareholder_confirmation_path(@shareholder_confirmation) %> |
+<%= link_to 'Back', shareholder_confirmations_path %>

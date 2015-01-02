@@ -1,0 +1,37 @@
+<%= form_for(@shareholder_confirmation) do |f| %>
+  <% if @shareholder_confirmation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shareholder_confirmation.errors.count, "error") %> prohibited this shareholder_confirmation from being saved:</h2>
+
+      <ul>
+      <% @shareholder_confirmation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sh_firstname %><br>
+    <%= f.text_field :sh_firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :sh_mi %><br>
+    <%= f.text_field :sh_mi %>
+  </div>
+  <div class="field">
+    <%= f.label :sh_last_name %><br>
+    <%= f.text_field :sh_last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :sh_bldg %><br>
+    <%= f.number_field :sh_bldg %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

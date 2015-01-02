@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102001020) do
+ActiveRecord::Schema.define(version: 20150102213557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20150102001020) do
   end
 
   add_index "proxy_votes", ["building_id"], name: "index_proxy_votes_on_building_id", using: :btree
+
+  create_table "shareholder_confirmations", force: true do |t|
+    t.string   "sh_firstname"
+    t.string   "sh_mi"
+    t.string   "sh_last_name"
+    t.integer  "sh_bldg"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.boolean  "is_shareholder"

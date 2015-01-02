@@ -1,0 +1,2 @@
+module ShareholderConfirmationsHelper
+end
