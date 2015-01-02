@@ -28,7 +28,7 @@ class ShareholderConfirmationsController < ApplicationController
 
     respond_to do |format|
       if @shareholder_confirmation.save
-        format.html { redirect_to @shareholder_confirmation, notice: 'Shareholder confirmation was successfully created.' }
+        format.html { redirect_to @shareholder_confirmation, notice: "Thanks! You'll receive an email notification once we've confirmed that you are a shareholder." }
         format.json { render :show, status: :created, location: @shareholder_confirmation }
       else
         format.html { render :new }

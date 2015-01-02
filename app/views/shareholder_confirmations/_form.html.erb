@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
+  <h2>Welcome!</h2>
+  <p>We need to do a one-time confirmation that you are a CHAOC shareholder.</p>
+<p>Please complete the following form, and be sure to enter your name <i>exactly</i> as it appears in your shareholder records.</p>
 
   <div class="field">
-    <%= f.label :sh_firstname %><br>
+    <%= f.label :sh_firstname, "First Name" %><br>
     <%= f.text_field :sh_firstname %>
   </div>
   <div class="field">
-    <%= f.label :sh_mi %><br>
+    <%= f.label :sh_mi, "Middle Initial (Optional)" %><br>
     <%= f.text_field :sh_mi %>
   </div>
   <div class="field">
-    <%= f.label :sh_last_name %><br>
+    <%= f.label :sh_last_name, "Last Name" %><br>
     <%= f.text_field :sh_last_name %>
   </div>
   <div class="field">
-    <%= f.label :sh_bldg %><br>
+    <%= f.label :sh_bldg, "Building Number" %><br>
     <%= f.number_field :sh_bldg %>
   </div>
   <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_field :notes %>
+    <%= f.label :notes, "Any additional Notes/Info" %><br>
+    <%= f.text_area(:notes, size: '50x10') %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit Confirmation Info" %>
   </div>
 <% end %>
