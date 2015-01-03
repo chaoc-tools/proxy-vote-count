@@ -9,4 +9,6 @@
 #
 
 class AnnualMeeting < ActiveRecord::Base
+  validates_uniqueness_of :year
+  validates_length_of :year, :minimum => 4, :maximum => 4, :allow_blank => false
 end
