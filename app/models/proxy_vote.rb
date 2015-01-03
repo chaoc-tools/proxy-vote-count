@@ -3,7 +3,6 @@
 # Table name: proxy_votes
 #
 #  id                  :integer          not null, primary key
-#  year                :integer
 #  count               :integer
 #  building_id         :integer
 #  created_at          :datetime
@@ -12,7 +11,6 @@
 #  building_count      :integer
 #  building_user_count :integer
 #
-
 
 class ProxyVote < ActiveRecord::Base
   belongs_to :building  #not sure if this is correct or necessary

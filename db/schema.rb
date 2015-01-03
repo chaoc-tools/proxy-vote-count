@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103220317) do
+ActiveRecord::Schema.define(version: 20150103230256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20150103220317) do
   end
 
   create_table "proxy_votes", force: true do |t|
-    t.integer  "year"
     t.integer  "count"
     t.integer  "building_id"
     t.datetime "created_at"
