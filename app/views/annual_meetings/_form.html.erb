@@ -1,0 +1,21 @@
+<%= form_for(@annual_meeting) do |f| %>
+  <% if @annual_meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@annual_meeting.errors.count, "error") %> prohibited this annual_meeting from being saved:</h2>
+
+      <ul>
+      <% @annual_meeting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :annual_meetings
+
   resources :shareholder_confirmations
 
   get 'auth/:provider/callback', to: 'sessions#create'
