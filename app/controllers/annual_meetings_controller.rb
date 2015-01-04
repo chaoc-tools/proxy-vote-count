@@ -10,6 +10,11 @@ class AnnualMeetingsController < ApplicationController
   # GET /annual_meetings/1
   # GET /annual_meetings/1.json
   def show
+    #list all the stats for a meeting on this page
+    # change to @annual_meeting
+    @total_vote_count = MyCollectedVote.update_total_vote_count
+    @vote_count_by_building = MyCollectedVote.vote_count_by_building
+    @proxy_votes = MyCollectedVote.all
   end
 
   # GET /annual_meetings/new

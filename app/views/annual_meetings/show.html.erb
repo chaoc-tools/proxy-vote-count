@@ -1,9 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @annual_meeting.year %> Annual Meeting</h1>
 
-<p>
-  <strong>Year:</strong>
-  <%= @annual_meeting.year %>
-</p>
+<h2>Proxy Votes Collected</h2>
+ <p>Total Count: <%= @total_vote_count %></p>
+ <p>By Building:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Building</th>
+      <th>Votes Collected</th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_annual_meeting_path(@annual_meeting) %> |
-<%= link_to 'Back', annual_meetings_path %>
+  <tbody>
+    <% @vote_count_by_building.each do |building| %>
+      <tr>
+        <td><%= building[:building_name] %></td>
+        <td><%= building[:building_votes] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%#= @annual_meeting.year %>
+
+

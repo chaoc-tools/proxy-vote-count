@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
   resources :annual_meetings
+  # do
+  #   resources :proxy_votes
+  # end
+
+ resources :users
+ resources :my_collected_votes
+
 
   resources :shareholder_confirmations
 
@@ -20,13 +27,7 @@ Rails.application.routes.draw do
   # get 'home/show'
 
   # root 'proxy_votes#index'
-  resources :my_collected_votes
-
-  resources :proxy_votes
-
-  resources :users
-
-  resources :buildings
+   resources :buildings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

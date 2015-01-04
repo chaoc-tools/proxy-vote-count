@@ -13,7 +13,8 @@
 #
 
 class ProxyVote < ActiveRecord::Base
-  belongs_to :building  #not sure if this is correct or necessary
+  # belongs_to :building  #not sure if this is correct or necessary
+  belongs_to :annual_meeting
 
   def self.update_total_vote_count
     #get count from all my_collected votes for all buildings

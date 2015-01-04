@@ -1,9 +1,10 @@
 class ProxyVotesController < ApplicationController
-  before_action :set_proxy_vote, only: [:show, :edit, :update, :destroy]
+  before_action :set_annual_meeting, :set_proxy_vote, only: [:show, :edit, :update, :destroy]
 
   # GET /proxy_votes
   # GET /proxy_votes.json
   def index
+    # change to @annual_meeting
     @total_vote_count = ProxyVote.update_total_vote_count
     @vote_count_by_building = ProxyVote.vote_count_by_building
     @proxy_votes = ProxyVote.all
@@ -65,6 +66,10 @@ class ProxyVotesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_annual_meeting
+      @annual_meeting = AnnualMeeting.find(params[:id])
+    end
+
     def set_proxy_vote
       @proxy_vote = ProxyVote.find(params[:id])
     end
